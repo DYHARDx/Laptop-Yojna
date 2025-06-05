@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Laptop Yojana 2025 - Welcome</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        .header {
+            background-color: #1a237e;
+            color: white;
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 30px;
+            background-color: #1a237e;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-top img {
+            max-width: 35px;
+            height: auto;
+        }
+
+        .header-text {
+            text-align: left;
+        }
+
+        .header-text h1 {
+            font-size: 18px;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .header-text p {
+            font-size: 12px;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 13px;
+        }
+
+        .contact-item i {
+            color: #ffc107;
+            font-size: 12px;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(26, 35, 126, 0.9), rgba(26, 35, 126, 0.9)),
+                        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 20px 100px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            background-color: #ffc107;
+            color: #1a237e;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+        }
+
+        .apply-btn:hover {
+            transform: scale(1.05);
+            background-color: #ffd54f;
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+        }
+
+        .stats-section {
+            background: white;
+            padding: 40px 20px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            color: #1a237e;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #1a237e;
+            margin-bottom: 40px;
+            font-size: 32px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #ffc107;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #1a237e;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .eligibility-section {
+            background-color: #e3f2fd;
+            padding: 60px 20px;
+        }
+
+        .eligibility-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .eligibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .eligibility-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .eligibility-item i {
+            color: #1a237e;
+            font-size: 24px;
+        }
+
+        .laptop-specs {
+            padding: 60px 20px;
+            background: white;
+        }
+
+        .specs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .spec-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #1a237e;
+        }
+
+        .spec-card h4 {
+            color: #1a237e;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .faq-section {
+            padding: 60px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: #1a237e;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .cta-section {
+            background: linear-gradient(45deg, #1a237e, #0d47a1);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .footer {
+            background-color: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .timeline-section {
+            padding: 60px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: #1a237e;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+            width: 50%;
+            padding: 0 40px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #1a237e;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -60px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -60px;
+        }
+
+        .timeline-content h3 {
+            color: #1a237e;
+            margin-bottom: 15px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timeline-content h3 i {
+            color: #ffc107;
+        }
+
+        .timeline-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content .step-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #1a237e;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .timeline-content .important-note {
+            background: #fff3e0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ef6c00;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 15px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-content::before {
+                left: -40px !important;
+            }
+        }
+
+        /* Updated mobile styles */
+        @media screen and (max-width: 768px) {
+            .header-top {
+                padding: 6px 15px;
+            }
+
+            .header-left {
+                width: auto;
+                flex: 1;
+            }
+
+            .header-top img {
+                max-width: 28px;
+            }
+
+            .header-text h1 {
+                font-size: 16px;
+            }
+
+            .header-text p {
+                font-size: 11px;
+            }
+
+            .header-right {
+                display: none;
+            }
+        }
+
+        /* Add styles for mobile contact info */
+        .mobile-contact {
+            display: none;
+        }
+
+        /* Add styles for schemes comparison section */
+        .schemes-section {
+            padding: 60px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .schemes-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .schemes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .scheme-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .scheme-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .scheme-card h3 {
+            color: #1a237e;
+            margin-bottom: 15px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .scheme-card h3 i {
+            color: #ffc107;
+        }
+
+        .scheme-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .scheme-card .eligibility {
+            font-size: 13px;
+            color: #1a237e;
+            background: #e3f2fd;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .scheme-card .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .status.active {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status.upcoming {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+
+        .status.closed {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        @media screen and (max-width: 768px) {
+            .schemes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+            <div class="header-left">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Government of India Emblem">
+                <div class="header-text">
+                    <h1>Free Laptop Yojana 2025</h1>
+                    <p>Government of Uttar Pradesh</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="header-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>1800-XXX-XXXX</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>support@uplaptop.gov.in</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h2>Transform Your Education with Digital Tools</h2>
+            <p>Free Laptop Yojana 2025 is a transformative initiative by the Uttar Pradesh Government to provide free laptops to eligible students. As education becomes increasingly digital, this scheme ensures every student has access to essential technology for their academic success.</p>
+            <a href="apply.html" class="apply-btn">Apply Now</a>
+        </div>
+    </div>
+
+    <div class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>65%</h3>
+                <p>Minimum Marks Required</p>
+            </div>
+            <div class="stat-item">
+                <h3>4+</h3>
+                <p>Course Categories</p>
+            </div>
+            <div class="stat-item">
+                <h3>256GB</h3>
+                <p>Storage Space</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Free for Eligible Students</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="features" id="overview">
+        <h2 class="section-title">Scheme Highlights</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-graduation-cap fa-3x" style="color: #1a237e; margin-bottom: 20px;"></i>
+                <h3>Eligibility</h3>
+                <p>Open for students in 10th, 12th, Polytechnic, and ITI courses with minimum 65% marks</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-laptop fa-3x" style="color: #1a237e; margin-bottom: 20px;"></i>
+                <h3>Benefits</h3>
+                <p>Free laptop with essential software and specifications for educational purposes</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-file-alt fa-3x" style="color: #1a237e; margin-bottom: 20px;"></i>
+                <h3>Easy Process</h3>
+                <p>Simple online registration process with minimal documentation required</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="eligibility-section" id="eligibility">
+        <div class="eligibility-container">
+            <h2 class="section-title">Eligibility Criteria</h2>
+            <div class="eligibility-grid">
+                <div class="eligibility-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Residence</h4>
+                        <p>Must be a permanent resident of Uttar Pradesh</p>
+                    </div>
+                </div>
+                <div class="eligibility-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Academic Performance</h4>
+                        <p>Minimum 65% marks in 10th or 12th examinations</p>
+                    </div>
+                </div>
+                <div class="eligibility-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Course Eligibility</h4>
+                        <p>Open for 10th, 12th, Polytechnic, and ITI students</p>
+                    </div>
+                </div>
+                <div class="eligibility-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Documentation</h4>
+                        <p>Aadhar card, mark sheets, and residence proof required</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-section" id="registration">
+        <div class="timeline-container">
+            <h2 class="section-title">How to Apply</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="step-number">1</div>
+                        <h3><i class="fas fa-mouse-pointer"></i> Click Apply Now</h3>
+                        <p>Click the "Apply Now" button on the top of this page to start your application process.</p>
+                        <div class="important-note">
+                            <i class="fas fa-info-circle"></i> Make sure you have all required documents ready before starting.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="step-number">2</div>
+                        <h3><i class="fas fa-user-edit"></i> Fill Application Form</h3>
+                        <p>Enter your personal details, educational qualifications, and contact information accurately.</p>
+                        <div class="important-note">
+                            <i class="fas fa-exclamation-circle"></i> Double-check all information before submitting.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="step-number">3</div>
+                        <h3><i class="fas fa-file-upload"></i> Upload Documents</h3>
+                        <p>Upload scanned copies of your Aadhar card, mark sheets, and residence proof.</p>
+                        <div class="important-note">
+                            <i class="fas fa-file-alt"></i> Required documents: Aadhar Card, Mark Sheets, Residence Proof
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="step-number">4</div>
+                        <h3><i class="fas fa-check-circle"></i> Submit & Confirm</h3>
+                        <p>Review your application and submit. Save the confirmation number for future reference.</p>
+                        <div class="important-note">
+                            <i class="fas fa-clipboard-check"></i> Keep your application number safe for tracking status.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="laptop-specs" id="specifications">
+        <div class="specs-container">
+            <h2 class="section-title">Expected Laptop Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h4><i class="fas fa-microchip"></i> Operating System</h4>
+                    <p>Windows 10 or later</p>
+                </div>
+                <div class="spec-card">
+                    <h4><i class="fas fa-memory"></i> RAM</h4>
+                    <p>4GB RAM (Minimum)</p>
+                </div>
+                <div class="spec-card">
+                    <h4><i class="fas fa-hdd"></i> Storage</h4>
+                    <p>1TB Storage</p>
+                </div>
+                <div class="spec-card">
+                    <h4><i class="fas fa-desktop"></i> Software</h4>
+                    <p>Pre-installed MS Office</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-section" id="faq">
+        <div class="faq-container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    When will the UP Free Laptop Yojana 2025 start?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The exact start date is yet to be announced. Please keep checking the official website (www.up.gov.in) for updates.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What documents are required for registration?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>You will need your Aadhar card, mark sheets (10th/12th), residence proof, and a valid mobile number for registration.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Is this scheme real or fake?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>This is a genuine initiative by the Uttar Pradesh government to support students' education. You can verify this on the official government website (www.up.gov.in).</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What are the benefits of this scheme?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The scheme provides free laptops to eligible students, enhancing their learning experience, providing access to online resources, and helping develop essential computer skills for future employment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Apply?</h2>
+            <p>Don't miss this opportunity to get your free laptop. Follow the simple registration process and take the first step towards digital education.</p>
+            <a href="apply.html" class="apply-btn">Apply Now</a>
+        </div>
+    </div>
+
+    <div class="schemes-section" id="schemes">
+        <div class="schemes-container">
+            <h2 class="section-title">State-Wise Laptop Schemes</h2>
+            <div class="schemes-grid">
+                <div class="scheme-card">
+                    <h3><i class="fas fa-laptop"></i> UP Free Laptop Yojana 2025</h3>
+                    <p>Uttar Pradesh's flagship scheme providing free laptops to meritorious students with minimum 65% marks.</p>
+                    <div class="eligibility">Eligibility: 10th/12th/Polytechnic/ITI students</div>
+                    <span class="status active">Active</span>
+                </div>
+
+                <div class="scheme-card">
+                    <h3><i class="fas fa-laptop"></i> Rajasthan Free Laptop Yojana</h3>
+                    <p>Rajasthan government's initiative for meritorious students with focus on digital education.</p>
+                    <div class="eligibility">Eligibility: 12th pass students</div>
+                    <span class="status active">Active</span>
+                </div>
+
+                <div class="scheme-card">
+                    <h3><i class="fas fa-laptop"></i> MP Free Laptop Yojana</h3>
+                    <p>Madhya Pradesh's scheme for providing laptops to students with excellent academic performance.</p>
+                    <div class="eligibility">Eligibility: 12th pass students</div>
+                    <span class="status active">Active</span>
+                </div>
+
+                <div class="scheme-card">
+                    <h3><i class="fas fa-laptop"></i> Laptop Sahay Yojana</h3>
+                    <p>Gujarat's initiative to support students with laptops for better education access.</p>
+                    <div class="eligibility">Eligibility: College students</div>
+                    <span class="status active">Active</span>
+                </div>
+
+                <div class="scheme-card">
+                    <h3><i class="fas fa-laptop"></i> Bihar Free Laptop Yojana</h3>
+                    <p>Bihar government's scheme for providing laptops to meritorious students.</p>
+                    <div class="eligibility">Eligibility: 12th pass students</div>
+                    <span class="status upcoming">Upcoming</span>
+                </div>
+
+                <div class="scheme-card">
+                    <h3><i class="fas fa-laptop"></i> Delhi Free Laptop Yojana</h3>
+                    <p>Delhi's initiative to provide laptops to students for digital learning.</p>
+                    <div class="eligibility">Eligibility: College students</div>
+                    <span class="status active">Active</span>
+                </div>
+
+                <div class="scheme-card">
+                    <h3><i class="fas fa-laptop"></i> AICTE Free Laptop Yojana</h3>
+                    <p>All India Council for Technical Education's scheme for technical students.</p>
+                    <div class="eligibility">Eligibility: Technical course students</div>
+                    <span class="status active">Active</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Scheme</a></li>
+                    <li><a href="#">Registration</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <ul>
+                    <li><i class="fas fa-globe"></i> Official Website: www.up.gov.in</li>
+                    <li><i class="fas fa-envelope"></i> Email: support@uplaptop.gov.in</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Address: Lucknow, Uttar Pradesh</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="https://upcmo.up.nic.in">UP CMO Portal</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">RTI</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Government of Uttar Pradesh. All rights reserved.</p>
+            <p>This is an official website of the Uttar Pradesh Government</p>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

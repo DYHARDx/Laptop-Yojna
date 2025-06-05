@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Laptop Yojana 2025 - Registration Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        .header {
+            background-color: #1a237e;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .header img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .registration-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #1a237e;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-btn {
+            background-color: #1a237e;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0d47a1;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 35, 126, 0.2);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #666;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #555;
+            transform: translateX(-5px);
+        }
+
+        .back-btn i {
+            margin-right: 8px;
+        }
+
+        .info-section {
+            background-color: #e3f2fd;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid #1a237e;
+        }
+
+        .info-section h2 {
+            color: #1a237e;
+            margin-bottom: 20px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-section h2 i {
+            color: #1a237e;
+        }
+
+        .info-section ul {
+            list-style-type: none;
+        }
+
+        .info-section li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .info-section li:before {
+            content: "✓";
+            color: #1a237e;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h2 {
+            color: #1a237e;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .required-field::after {
+            content: "*";
+            color: #ff0000;
+            margin-left: 4px;
+        }
+
+        .error-message {
+            color: #ff0000;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success-message {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        .footer {
+            background-color: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .platform-charge {
+            display: none;
+        }
+
+        .upi-payment-section {
+            display: none;
+        }
+
+        .payment-steps {
+            display: none;
+        }
+
+        .platform-charge h3 {
+            color: #ef6c00;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .platform-charge p {
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .charge-amount {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ef6c00;
+            margin: 15px 0;
+        }
+
+        .payment-info {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .payment-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .payment-info i {
+            color: #2e7d32;
+            margin-right: 8px;
+        }
+
+        .terms-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .terms-checkbox input[type="checkbox"] {
+            width: auto;
+            margin-top: 3px;
+        }
+
+        .terms-checkbox label {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .payment-gateway {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .payment-gateway h3 {
+            color: #1a237e;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .upi-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .upi-option {
+            background: #f8f9fa;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .upi-option:hover {
+            border-color: #1a237e;
+            transform: translateY(-2px);
+        }
+
+        .upi-option.selected {
+            border-color: #1a237e;
+            background-color: #e3f2fd;
+        }
+
+        .upi-option img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 8px;
+        }
+
+        .upi-option p {
+            font-size: 14px;
+            color: #333;
+            margin: 0;
+        }
+
+        .upi-details {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+
+        .upi-details p {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .upi-id {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 16px;
+            color: #1a237e;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .payment-status {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .payment-status.success {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .payment-status.error {
+            background: #ffebee;
+            color: #c62828;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Government of India Emblem">
+        <h1> Free Laptop Yojana 2025</h1>
+        <p>Government of Uttar Pradesh</p>
+    </div>
+
+    <div class="container">
+        <a href="landing.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <div class="registration-form">
+            <div class="form-header">
+                <h2>Registration Form</h2>
+                <p>Please fill in all the required fields marked with *</p>
+            </div>
+            <form id="registrationForm" onsubmit="return validateForm(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name" class="required-field">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="error-message" id="nameError">Please enter your full name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob" class="required-field">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                        <div class="error-message" id="dobError">Please enter your date of birth</div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="board_roll" class="required-field">Board Roll Number</label>
+                        <input type="text" id="board_roll" name="board_roll" required>
+                        <div class="error-message" id="boardRollError">Please enter your board roll number</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="total_marks" class="required-field">Total Marks Obtained</label>
+                        <input type="number" id="total_marks" name="total_marks" min="300" max="1000" required>
+                        <div class="error-message" id="totalMarksError">Please enter marks between 300-1000</div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="aadhar" class="required-field">Aadhar Number</label>
+                        <input type="text" id="aadhar" name="aadhar" pattern="[0-9]{12}" required>
+                        <div class="error-message" id="aadharError">Please enter a valid 12-digit Aadhar number</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile" class="required-field">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+                        <div class="error-message" id="mobileError">Please enter a valid 10-digit mobile number</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="required-field">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError">Please enter a valid email address</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="state" class="required-field">Select Your State Scheme</label>
+                    <select id="state" name="state" required>
+                        <option value="">Select State Scheme</option>
+                        <option value="rajasthan">Rajasthan Free Laptop Yojana</option>
+                        <option value="mp">MP Free Laptop Yojana</option>
+                        <option value="up">UP Free Laptop Yojana</option>
+                        <option value="gujarat">Laptop Sahay Yojana (Gujarat)</option>
+                        <option value="bihar">Bihar Free Laptop Yojana</option>
+                        <option value="delhi">Delhi Free Laptop Yojana</option>
+                        <option value="aicte">AICTE Free Laptop Yojana</option>
+                    </select>
+                    <div class="error-message" id="stateError">Please select a state scheme</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address" class="required-field">Full Address</label>
+                    <input type="text" id="address" name="address" required>
+                    <div class="error-message" id="addressError">Please enter your complete address</div>
+                </div>
+
+                <button type="submit" class="submit-btn">Proceed to Payment</button>
+            </form>
+        </div>
+
+        <div class="info-section">
+            <h2><i class="fas fa-info-circle"></i> Important Information</h2>
+            <ul>
+                <li>All fields marked with * are mandatory</li>
+                <li>Please ensure all documents are clear and legible</li>
+                <li>Keep your application number safe for future reference</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Government of Uttar Pradesh. All rights reserved.</p>
+        <p>This is an official website of the Uttar Pradesh Government</p>
+    </div>
+
+    <!-- Add SheetDB API Script -->
+    <script src="google-sheets.js"></script>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            let isValid = true;
+            const form = document.getElementById('registrationForm');
+            const inputs = form.querySelectorAll('input, select');
+            
+            // Reset all error messages
+            document.querySelectorAll('.error-message').forEach(error => {
+                error.style.display = 'none';
+            });
+            
+            // Validate each input
+            inputs.forEach(input => {
+                const errorElement = document.getElementById(input.id + 'Error');
+                if (!input.value) {
+                    errorElement.style.display = 'block';
+                    input.style.borderColor = '#ff0000';
+                    isValid = false;
+                } else {
+                    input.style.borderColor = '#ddd';
+                }
+
+                // Validate marks
+                if (input.id === 'total_marks') {
+                    const marks = parseInt(input.value);
+                    if (marks < 300 || marks > 1000) {
+                        errorElement.style.display = 'block';
+                        input.style.borderColor = '#ff0000';
+                        isValid = false;
+                    }
+                }
+
+                // Validate Aadhar
+                if (input.id === 'aadhar') {
+                    if (!/^\d{12}$/.test(input.value)) {
+                        errorElement.style.display = 'block';
+                        input.style.borderColor = '#ff0000';
+                        isValid = false;
+                    }
+                }
+
+                // Validate Mobile
+                if (input.id === 'mobile') {
+                    if (!/^\d{10}$/.test(input.value)) {
+                        errorElement.style.display = 'block';
+                        input.style.borderColor = '#ff0000';
+                        isValid = false;
+                    }
+                }
+            });
+
+            if (isValid) {
+                // Get form data
+                const formData = {
+                    name: document.getElementById('name').value,
+                    rollNumber: document.getElementById('board_roll').value,
+                    marks: document.getElementById('total_marks').value,
+                    aadhar: document.getElementById('aadhar').value,
+                    mobile: document.getElementById('mobile').value,
+                    email: document.getElementById('email').value,
+                    state: document.getElementById('state').value,
+                    address: document.getElementById('address').value
+                };
+                
+                // Store form data in localStorage
+                localStorage.setItem('registrationData', JSON.stringify(formData));
+                
+                // Redirect to payment page
+                window.location.href = `payment.html?name=${encodeURIComponent(formData.name)}&roll=${encodeURIComponent(formData.rollNumber)}&marks=${encodeURIComponent(formData.marks)}`;
+            }
+        }
+
+        // Add input event listeners for real-time validation
+        document.querySelectorAll('input, select').forEach(input => {
+            input.addEventListener('input', function() {
+                const errorElement = document.getElementById(this.id + 'Error');
+                if (this.value) {
+                    errorElement.style.display = 'none';
+                    this.style.borderColor = '#ddd';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

